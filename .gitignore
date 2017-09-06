@@ -1,0 +1,13 @@
+**/node_modules/**
+package-lock.json
+main.js
+**/app/*.map
+**/app/*.js
+
+.classpath
+.project
+.pom.properties
+**/.settings/
+*.class
+**/.mvn/
+**/target/

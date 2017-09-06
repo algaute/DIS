@@ -1,0 +1,98 @@
+<div class="container" *ngIf="data">
+	<h1 *ngIf="newData">Create a new message</h1>
+	<h1 *ngIf="!newData">Update the message {{data.id}}</h1>
+	<form #f="ngForm"> <!-- (ngSubmit)="onSubmit(f.value)">-->
+	 	<!-- <div class="form-group" *ngIf="data.id">
+			<label for="id">Id</label>
+          	<span id="id" class="form-control">{{data.id}}</span>
+      	</div> -->
+      	<div class="form-group">
+          	<label for="subject">Subject</label>
+          	<input type="text" id="subject" name="subject" class="form-control" required [(ngModel)]="data.subject" #subject="ngModel"/>
+          	<div *ngIf="subject.control.touched" [hidden]="!subject.control.hasError('required')" class="alert alert-danger">Subject is required</div>
+      	</div>
+      	<div class="form-group">
+     		<label for="valid">Display</label>
+     		<select [(ngModel)]="data.valid" class="form-control" id="valid" name="valid">
+ 				<option *ngFor="let item of validValues" [value]="item.value" [selected]="data.valid==item.value">{{item.name}}</option>
+			</select>
+      	</div>
+      	<div class="form-group">
+      		<label for="timeDelay">Time Delay</label>
+      		<select [(ngModel)]="data.time_interval_sec" class="form-control" id="timeDelay" name="timeDelay">
+ 				<option *ngFor="let item of timeValues" [value]="item.value" [selected]="data.time_interval_sec==item.value">{{item.name}}</option>
+			</select>
+      	</div>
+      
+      <!-- 
+      <div class="form-group">
+      	<label for="dateFrom">From</label>
+      	<input type="text" id="dateFrom" [(ngModel)]="data.start_date_millisec" class="form-control" required #dateFrom="ngForm"/>
+          <div *ngIf="dateFrom.control.touched" [hidden]="!dateFrom.control.hasError('required')" class="alert alert-danger">From is required</div>
+      </div>
+       -->
+
+		   
+      	<div class="form-group">
+      		<label for="dateFrom">From</label>
+	      	<br/>
+		    <div class="form-group">
+		      	<p-calendar id="dateFrom" 
+		      				name="dateFrom"
+		      				[(ngModel)]="dateFrom" 
+		      				dateFormat="dd-mm-yy" 
+		      				minDate="-1d" 
+		      				showAnim="slideDown" 
+		      				[readonlyInput]="true" 
+		      				showIcon=true
+		      				monthNavigator=true
+		      				yearNavigator=true
+		      				defaultDate=dateFrom
+		      	>
+		      	</p-calendar>
+		    </div>
+		</div>
+             
+<!-- 
+<div class="form-group">
+     		<label for="dateTo">To</label>
+    		<input type="text" id="dateTo" [(ngModel)]="data.end_date_millisec" class="form-control" required #dateTo="ngForm"/>
+          <div *ngIf="dateTo.control.touched" [hidden]="!dateTo.control.hasError('required')" class="alert alert-danger">To is required</div>
+</div>
+-->
+		<div class="form-group">
+     		<label for="dateTo">To</label>
+     		<br/>
+		    <div class="form-group">
+		      	<p-calendar id="dateTo" 
+		      				name="dateTo"
+		      				[(ngModel)]="dateTo" 
+		      				dateFormat="dd-mm-yy" 
+		      				minDate="+1d" 
+		      				showAnim="slideDown" 
+		      				[readonlyInput]="true" 
+		      				showIcon=true
+		      				monthNavigator=true
+		      				yearNavigator=true
+		      				defaultDate=dateTo
+		      	>
+		      	</p-calendar>
+		    </div>			
+         </div>
+         
+		<div class="form-group">
+          	<label for="content">Content</label>
+          	<textarea rows=20 id="message" name="message" [(ngModel)]="data.message" class="form-control" required #message="ngModel"></textarea>
+          	<div *ngIf="message.control.touched" [hidden]="!message.control.hasError('required')" class="alert alert-danger">Content is required</div>
+      	</div>
+		<div class="form-group">
+          	<label for="notes">Notes</label>
+         	<input type="text" id="notes" name="notes" [(ngModel)]="data.notes" class="form-control"/>
+      	</div>
+      	<!-- <button type="submit" class="btn btn-default">Save</button>-->
+      </form>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button type="button" class="btn btn-default active" (click)="cancel()">Cancel</button>
+      		<button type="button" class="btn btn-primary active" (click)="save()">Save</button>
+      </div>	
+ </div>

@@ -1,0 +1,26 @@
+div {
+	_border-style: solid;
+	_border-width:thin;
+}
+
+ul.displayDatas {
+    list-style: none;
+}
+
+ul li {
+    all: initial;
+}
+
+.middle_pane {
+	float:right;
+	width:50%;
+	height:100%;
+	display: flex; /* contexte sur le parent */
+	flex-direction: column; /* direction d'affichage verticale */
+	justify-content: center; /* alignement vertical */
+}
+.datas {
+	width:100%;
+	text-align:center;
+}
+

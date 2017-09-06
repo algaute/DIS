@@ -1,0 +1,181 @@
+.title {
+	font-size: 1.3em;
+    color: #999;
+    text-align: right;
+    position: relative;
+    top: 5px; 
+    right: 10px;
+}
+
+.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+
+.displayDatas {
+  _margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+.displayDatas li {
+  position: relative;
+  left: 0;
+  margin: .5em;
+}
+
+.displayDatas li.legende {
+  cursor: pointer;
+  background-color: #607D8B;
+  color:white;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.displayDatas li.data-element {
+}
+.displayDatas li.data-element div {
+  cursor: pointer;
+  background-color: #EEE;
+  border:1px solid;
+  border-radius: 4px 0 0 4px;
+}
+
+.displayDatas li.data-element:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.displayDatas li.data-element.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+
+.displayDatas li span {
+   	display: inline-block;
+}
+
+.displayDatas li.data-element .detail {
+  padding: 5px;
+  margin-top: -1px;
+  border-top: 1px solid;
+  background-color:fff;
+  border-bottom-left-radius:4px;
+}
+
+.displayDatas li.data-element .detail div.message {
+  text-align: center;
+}
+
+.displayDatas li.data-element .detail div.message span {
+  text-align: initial;
+}
+
+
+.col1 {
+  	font-size: small;
+ 	color: white;
+    background-color: #607D8B;
+  	line-height: 1em;
+  	border-radius: 4px 0 0 4px;
+  	padding: 0.6em 0.7em;
+  	width:40px;
+}
+.col2 {
+  	padding: 2px;
+  	width: 20px;
+    text-align: right;
+}
+.col3 {
+  	padding: 2px;
+  	width:30%;
+}
+.col4 {
+  	padding: 2px;
+  	width:80px;
+}
+.col5 {
+  	padding: 2px;
+  	width:80px;
+}
+.col6 {
+  	padding: 2px;
+  	width:55px;
+  	text-align: right;
+}
+.col7 {
+  	padding: 2px;
+  	width:50px;
+}
+.col8 {
+  	padding: 2px;
+  	width:80px;
+}
+.col9 {
+  	padding: 2px;
+  	width:6%;
+}
+
+.delete-button {
+
+}
+.update-button {
+	
+}
+
+.buttons {
+	_clear:both;
+}
+button {
+  font-family: Arial;
+  background-color: inherit;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  margin: 5px 0;
+    font-size: 1.2em;
+    float:right;
+  	color:#607D8B;
+}
+
+button:hover {
+  background-color: #cfd8dc;
+}
+
+button.btn-add {
+	color: white;
+    background-color: #607D8B;
+    margin: 0!important;
+    margin-right:.5em;
+}
+button.btn-add:hover {
+  background-color: #858b8e;
+}
+
+.pagination li span {
+	color: white;
+    background-color: #607D8B;
+    border:none;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    font-size: 1.2em;
+}
+.pagination li span:hover {
+  	background-color: #858b8e;
+}
+
+/*
+.displayDatas li span {
+	display:inline;
+   	float:left;
+   	margin:0px;
+   	padding:3px;
+}
+
+.displayDatas li.legende {font-weight:bold}
+.displayDatas span.col1 {width:70px}
+.displayDatas span.col2 {width:120px}
+.displayDatas span.col3 {width:90px}
+*/

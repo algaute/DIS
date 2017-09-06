@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0;
+	font-size:35pt;
+}
+
+h1 {font-size:70pt;margin: 0;padding: 0;    padding-bottom: 14px;}
+h2 {font-size:60pt;margin: 0;padding: 0;    padding-bottom: 12px;}
+h3 {font-size:50pt;margin: 0;padding: 0;    padding-bottom: 10px;}
+h4 {font-size:40pt;margin: 0;padding: 0;    padding-bottom: 8px;}
+h5 {font-size:30pt;margin: 0;padding: 0;    padding-bottom: 6px;}
+h6 {font-size:20pt;margin: 0;padding: 0;    padding-bottom: 4px;}
+p {margin: 0;padding: 0;;padding-top:2px;padding-bottom:2px;}
+br {margin: 0;padding: 0;}
+div{margin: 0;padding: 0;}
+span{margin: 0;padding: 0;}
+ul {
+	list-style-type: initial;
+	font-size:25pt;
+	color: inherit;
+}
+ol {
+	margin-left: 5px;
+	font-size:25pt;
+	color: inherit;
+}
+li{margin:0;padding-top:0;padding-bottom:0}

@@ -1,0 +1,64 @@
+<div class="title">{{title}}</div>
+<div class="title">Admin</div>
+<ul class="displayDatas">
+	<li class="legende">
+		<span class="col1">Id</span>
+		<span class="col2">#</span>
+		<span class="col3">Subject</span>
+		<span class="col4">From</span>
+		<span class="col5">To</span>
+		<span class="col6">Duration</span>
+		<span class="col7">Created By</span>
+		<span class="col8">Created From</span>
+		<span class="col9">Display</span>
+	</li>
+	<li class="data-element" *ngFor="let data of datas ;let row=index;" (click)="onRowSelect(data, $event)">
+		<div *ngIf="(row>=(currentPage-1)*maxItems) && (row<currentPage*maxItems)">
+			<span class="col1 telement">{{data.id}}</span>
+			<span class="col2">{{data.the_order}}</span>
+			<span class="col3">{{data.subject}}</span>
+			<span class="col4" [innerHTML]="transformMilli2Date(data.start_date_millisec)"></span>
+			<span class="col5" [innerHTML]="transformMilli2Date(data.end_date_millisec)"></span>
+			<span class="col6">{{data.time_interval_sec}}</span>
+			<span class="col7">{{data.created_by}}</span>
+			<span class="col8" [innerHTML]="transformMilli2Date(data.created_on)"></span>
+			<span class="col9">{{data.valid}}</span>
+			<button class="col10 delete-button" (click)="deleteData(data, $event)">
+				<i class="fa fa-trash fa-fw" aria-hidden="true"></i>
+			</button>
+			<button class="col11 update-button" (click)="updateData(data, $event)">
+				<i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
+			</button>	
+			<div class="detail" [hidden]="data!=selectedData">
+				<div class="" *ngIf="data.notes">
+	                <label>Note:</label>
+	                <span>{{data.notes}}</span>
+	            </div>
+	            <div class="message">
+	            	<span [innerHTML]="transformHTML(data.message)"></span>
+	            </div>
+	        </div>
+		</div>
+	</li>
+</ul>
+<ul class="pagination">
+	<li class="pagination_begin" *ngIf="currentPage > 1">
+		<span (click)="paginateToBegin()"><<</span>
+	</li>
+	<li class="pagination_moins" *ngIf="currentPage > 1">
+		<span (click)="paginateMoins(currentPage)"><</span>
+	</li>
+	<li class="" *ngFor="let key of pages">
+		<span *ngIf="key >= currentPage && key <= (currentPage+maxPages-1)" (click)="setPage(key)">{{key}}</span>
+	</li>
+	<li class="pagination_plus" *ngIf="currentPage < maxPages && currentPage < totalPages">
+		<span (click)="paginatePlus(currentPage)">></span>
+	</li>
+	<li class="pagination_end" *ngIf="currentPage <= totalPages-maxPages">
+		<span (click)="paginateToEnd()">>></span>
+	</li>	
+</ul>
+<div class="buttons">
+	<button type="button" class="btn btn-add" (click)="addNewData()">Add new</button>
+</div>
+<div class="error" *ngIf="error">{{error}}</div>

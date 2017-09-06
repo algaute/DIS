@@ -1,0 +1,21 @@
+<div class="middle_pane">
+	
+	<div *ngIf="datas" id="content" class="datas">
+		<ul class="displayDatas">
+			<li *ngFor="let displayData of datas; trackBy:myTrackBy; let i=index">
+				<span [hidden]="myTrackBy(i,displayData)">
+					<span [innerHTML]="transformHTML(displayData.message)" class="toto"></span>
+				</span>
+			</li>
+		</ul>
+	</div>
+	 
+	 <div *ngIf="data" id="content" class="data">
+		<ul class="displayData">
+			<li> 
+				<span class="message" [innerHTML]="transformHTML(data.message)"></span>
+			</li>
+		</ul>
+	</div>
+	<div class="error" *ngIf="error">{{error}}</div>
+</div>
